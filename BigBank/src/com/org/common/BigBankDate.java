@@ -1,15 +1,18 @@
-package com.org.lxh;
+package com.org.common;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import com.org.lxh.R;
+import com.org.lxh.R.id;
+import com.org.lxh.R.layout;
+
 import kankan.wheel.widget.OnWheelChangedListener;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.adapters.ArrayWheelAdapter;
 import kankan.wheel.widget.adapters.NumericWheelAdapter;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;

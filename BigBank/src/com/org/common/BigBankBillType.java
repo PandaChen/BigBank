@@ -1,4 +1,4 @@
-package com.org.lxh;
+package com.org.common;
 
 public class BigBankBillType {
 
