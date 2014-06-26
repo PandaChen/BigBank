@@ -10,9 +10,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity implements OnClickListener{
 
-	Button nav_details_year;	//账单
+	private Button nav_details_year;	//账单
 	private Button add_new;
 	private TextView main_month;
 	private TextView main_year;
@@ -44,29 +44,30 @@ public class MainActivity extends Activity{
 		main_week.setText(BigBankDate.getSundayOfThisWeek()+"-"+BigBankDate.getSaturdayOfThisWeek());
         main_month_date.setText(BigBankDate.getFistDayOfMonth()+"-"+BigBankDate.getLastDayOfMonth());
 		
-		//再记一笔监听
+		//再记一笔
 		add_new = (Button) this.findViewById(R.id.add_new);
-		add_new.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(arg0.getContext(),add_pay_Activity.class);
-				arg0.getContext().startActivity(i);
-			}
-		});
-		//账单监听
+		add_new.setOnClickListener(this);
+
+		//账单
 		nav_details_year = (Button) this.findViewById(R.id.nav_details_year);
-		nav_details_year.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(arg0.getContext(),detail_list_Activity.class);
-				arg0.getContext().startActivity(i);
-			}
-		});
+		nav_details_year.setOnClickListener(this);
 		
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		switch(arg0.getId()){
+		//再记一笔
+		case R.id.add_new:
+			Intent add_new = new Intent(this,add_pay_Activity.class);
+			this.startActivity(add_new);
+			break;
+		//账单
+		case R.id.nav_details_year:
+			Intent nav_details_year = new Intent(this,detail_list_Activity.class);
+			this.startActivity(nav_details_year);
+		}		
 	}
 	
 }

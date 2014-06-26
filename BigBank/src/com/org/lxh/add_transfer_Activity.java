@@ -16,38 +16,31 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
-public class add_transfer_Activity extends Activity {
-	Button but_back; // 返回
-	Spinner add_type; // 新增类型(支出、收入、转账、退款)
-	Button but_save; // 保存
-	Spinner add_transfer_account_left; // 转账账户左
-	Spinner add_transfer_account_right; // 转账账户右
-	Button but_camera; // 相机
-	EditText add_money; // 金额
-	TextView add_date_txt; // 日期
-	Spinner add_member_spinner; // 成员
-	Spinner add_project_spinner; // 项目
-	Spinner add_place_spinner; // 商家、地点
-	Button add_tip_but; // 备注
-	Button butSave; // 保存
-	Button butAgain; // 再记一笔
+public class add_transfer_Activity extends Activity implements OnClickListener {
+	private Button but_back; // 返回
+	private Spinner add_type; // 新增类型(支出、收入、转账、退款)
+	private Button but_save; // 保存
+	private Spinner add_transfer_account_left; // 转账账户左
+	private Spinner add_transfer_account_right; // 转账账户右
+	@SuppressWarnings("unused")
+	private Button but_camera; // 相机
+	private EditText add_money; // 金额
+	private TextView add_date_txt; // 日期
+	private Spinner add_member_spinner; // 成员
+	private Spinner add_project_spinner; // 项目
+	private Spinner add_place_spinner; // 商家、地点
+	private Button add_tip_but; // 备注
+	private Button butSave; // 保存
+	private Button butAgain; // 再记一笔
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.add_transfer);
 
-		// 返回《监听
+		// 返回〈
 		but_back = (Button) this.findViewById(R.id.but_back);
-		but_back.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(arg0.getContext(), MainActivity.class);
-				arg0.getContext().startActivity(i);
-			}
-		});
+		but_back.setOnClickListener(this);
 
 		// 新增类型与具体类型监听
 		add_type = (Spinner) findViewById(R.id.add_type);
@@ -89,64 +82,21 @@ public class add_transfer_Activity extends Activity {
 			}
 		});
 
-		// 点击备注，跳转tips_Activity完成信息填写
-		add_tip_but = (Button) this.findViewById(R.id.add_tip_but);
-		add_tip_but.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				Intent i = new Intent(arg0.getContext(), tips_Activity.class);
-				String tips = add_tip_but.getText().toString();
-				i.putExtra("tips", tips);
-				startActivityForResult(i, 0);
-			}
-
-		});
-
 		// 点击 “√保存”
 		but_save = (Button) this.findViewById(R.id.but_save);
-		but_save.setOnClickListener(new OnClickListener() {
+		but_save.setOnClickListener(this);
 
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				saveData();
-				// 保存成功后返回主界面
-				Intent i = new Intent(arg0.getContext(), MainActivity.class);
-				arg0.getContext().startActivity(i);
-			}
-		});
+		// 点击备注
+		add_tip_but = (Button) this.findViewById(R.id.add_tip_but);
+		add_tip_but.setOnClickListener(this);
 
 		// 点击“保存”
 		butSave = (Button) this.findViewById(R.id.butSave);
-		butSave.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-				saveData();
-				// 保存成功后返回主界面
-				Intent i = new Intent(arg0.getContext(), MainActivity.class);
-				arg0.getContext().startActivity(i);
-			}
-		});
+		butSave.setOnClickListener(this);
 
 		// 点击再记一笔
 		butAgain = (Button) this.findViewById(R.id.butAgain);
-		butAgain.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View arg0) {
-				// TODO Auto-generated method stub
-
-				// 保存数据
-				saveData();
-				// 保存成功后,清空本页面
-				Intent i = new Intent(arg0.getContext(), add_pay_Activity.class);
-				arg0.getContext().startActivity(i);
-			}
-		});
+		butAgain.setOnClickListener(this);
 	}
 
 	// 返回tips_Activity的数据
@@ -206,5 +156,45 @@ public class add_transfer_Activity extends Activity {
 						add_member_spinner1, add_project_spinner1,
 						add_place_spinner1, add_tip_but1 });
 		db.close();
+	}
+
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		switch (arg0.getId()) {
+		// 返回〈
+		case R.id.but_back:
+			Intent but_back = new Intent(this, MainActivity.class);
+			this.startActivity(but_back);
+			break;
+		// √保存
+		case R.id.but_save:
+			saveData();
+			// 保存成功后返回主界面
+			Intent but_save = new Intent(this, MainActivity.class);
+			this.startActivity(but_save);
+			break;
+		// 点击备注
+		case R.id.add_tip_but:
+			Intent tip_but = new Intent(this, tips_Activity.class);
+			String tips = add_tip_but.getText().toString();
+			tip_but.putExtra("tips", tips);
+			startActivityForResult(tip_but, 0);
+			break;
+		// 保存
+		case R.id.butSave:
+			saveData();
+			// 保存成功后返回主界面
+			Intent butSave = new Intent(this, MainActivity.class);
+			this.startActivity(butSave);
+			break;
+		// 再记一笔
+		case R.id.butAgain:
+			saveData();
+			// 保存成功后,刷新本页面
+			Intent butAgain = new Intent(this, add_pay_Activity.class);
+			this.startActivity(butAgain);
+			break;
+		}
 	}
 }
