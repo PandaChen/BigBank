@@ -21,6 +21,7 @@ public class add_income_Activity extends Activity implements OnClickListener {
 	private Spinner add_type; // 新增类型(支出、收入、转账、退款)
 	private Button but_save; // 保存
 	@SuppressWarnings("unused")
+	//123
 	private Button but_camera; // 相机
 	private EditText add_money; // 金额
 	private Spinner add_type_spinner; // 具体类型
