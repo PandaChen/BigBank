@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ivory"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffca39" >
+
+        <ImageButton
+            android:id="@+id/but_back"
+            style="@style/header_imgbut"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_back"
+            android:textStyle="bold" />
+        <!-- date -->
+
+        <TextView
+            android:id="@+id/details_header_date_txt"
+            style="@style/header_txt"
+            android:layout_toRightOf="@id/but_back"
+            android:text="@string/Temp" />
+
+        <ImageButton
+            android:id="@+id/but_add"
+            style="@style/header_imgbut"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_action_bar_add" />
+
+        <ImageButton
+            android:id="@+id/details_header_time_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="38dp"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@id/but_add"
+            android:background="#ffca39"
+            android:src="@drawable/icon_action_bar_time" />
+    </RelativeLayout>
+
+    <!-- details_amount_show -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#866e54" >
+
+        <TextView
+            android:id="@+id/details_amount_sum"
+            style="@style/details_amount_txt1"
+            android:layout_alignParentLeft="true"
+            android:text="@string/details_amount_sum" />
+
+        <TextView
+            android:id="@+id/details_amount_money"
+            style="@style/details_amount_txt1"
+            android:layout_alignParentRight="true"
+            android:text="@string/Temp" />
+
+        <!-- 分割线 -->
+
+        <View
+            android:id="@+id/details_amount_line1"
+            style="@style/details_amount_line"
+            android:layout_below="@id/details_amount_sum" />
+
+        <TextView
+            android:id="@+id/details_amount_income"
+            style="@style/details_amount_txt2"
+            android:layout_alignParentLeft="true"
+            android:text="@string/details_amount_income" />
+        <!-- 竖分割线 -->
+
+        <View
+            android:id="@+id/details_amount_line2"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/details_amount_line1"
+            android:layout_centerHorizontal="true"
+            android:background="#7b6144" />
+
+        <TextView
+            android:id="@+id/details_amount_income_money"
+            style="@style/details_amount_txt2"
+            android:layout_toLeftOf="@id/details_amount_line2"
+            android:text="@string/Temp" />
+
+        <TextView
+            android:id="@+id/details_amount_pay"
+            style="@style/details_amount_txt2"
+            android:layout_toRightOf="@id/details_amount_line2"
+            android:text="@string/details_amount_pay" />
+
+        <TextView
+            android:id="@+id/details_amount_pay_money"
+            style="@style/details_amount_txt2"
+            android:layout_alignParentRight="true"
+            android:text="@string/Temp" />
+    </RelativeLayout>
+
+    <!-- 主体内容 -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/details_part_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/main_today_img_1"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/main_today" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/details_secondary_1"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/main_today_img_1"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/details_primary_1"
+                    style="@style/details_primary"
+                    android:layout_below="@id/details_secondary_1"
+                    android:layout_toRightOf="@id/main_today_img_1"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/details_go_1"
+                    style="@style/details_go" />
+
+                <TextView
+                    android:id="@+id/details_money_sum_1"
+                    style="@style/details_money_sum"
+                    android:layout_toLeftOf="@id/details_go_1"
+                    android:text="@string/Temp" />
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/main_today_img_1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/details_part_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/main_today_img_2"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/main_today" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/details_secondary_2"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/main_today_img_2"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/details_primary_2"
+                    style="@style/details_primary"
+                    android:layout_below="@id/details_secondary_2"
+                    android:layout_toRightOf="@id/main_today_img_2"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/details_go_2"
+                    style="@style/details_go" />
+
+                <TextView
+                    android:id="@+id/details_money_sum_2"
+                    style="@style/details_money_sum"
+                    android:layout_toLeftOf="@id/details_go_2"
+                    android:text="@string/Temp" />
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/main_today_img_2" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

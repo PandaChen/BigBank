@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ivory"
+    android:orientation="vertical" >
+    
+    <!-- Header -->
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffca39" >
+        <Button 
+            android:id="@+id/but_back"
+            style="@style/header_but"
+            android:textStyle="bold"
+            android:text="@string/but_back"
+            android:layout_alignParentLeft="true"/>
+        <Spinner 
+            android:id="@+id/add_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:entries="@array/add_type"
+            android:background="#e9a400"
+            android:layout_marginTop="5dp" />
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/add_type"
+            android:layout_toRightOf="@id/add_type" />
+        <Button 
+            android:id="@+id/but_save"
+            style="@style/header_but"
+            android:text="@string/but_save"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+    
+    
+    <!-- 主要内容 -->
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
+        
+        <!-- 第一行 -->
+        <ImageButton 
+            android:id="@+id/but_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_camera"
+            android:layout_alignParentLeft="true" />
+        <EditText 
+            android:id="@+id/add_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_alignParentRight="true"
+            android:background="#ffffff"
+            android:textSize="28sp"
+            android:text="0.00" />
+        <!-- 分割线 -->
+   		<View
+   		    style="@style/line"
+      		android:layout_below="@id/but_camera"
+      		android:layout_toRightOf="@id/but_camera" />
+   		
+   		<!-- 第二行 -->
+   		<TextView 
+   		    android:id="@+id/add_type_txt"
+   		    style="@style/add_txt"
+            android:layout_below="@id/but_camera"
+            android:text="@string/add_type" />
+   		<Spinner
+   		    android:id="@+id/add_type_spinner"
+   		    style="@style/add_spinner"
+   		    android:layout_alignTop="@id/add_type_txt" />
+   		<!-- 分割线 -->
+   		<View
+   		    style="@style/line"
+      		android:layout_below="@id/add_type_txt" />
+   		
+   		<!-- 第三行 -->
+   		<TextView 
+   		    android:id="@+id/add_account_txt"
+   		    style="@style/add_txt"
+            android:layout_below="@id/add_type_txt"
+            android:text="@string/add_account" />
+   		<Spinner
+   		    android:id="@+id/add_account_spinner"
+   		    style="@style/add_spinner"
+   		    android:layout_alignTop="@id/add_account_txt"
+   		    android:entries="@array/account_type" />
+   		<!-- 分割线 -->
+   		<View
+   		    style="@style/line"
+      		android:layout_below="@id/add_account_txt" />
+   		
+   		<!-- 第四行 -->
+   		<TextView 
+   		    android:id="@+id/add_date_txt"
+   		    style="@style/add_txt"
+            android:layout_below="@id/add_account_txt"
+            android:text="@string/Temp" />
+   		<!-- 竖分割线 -->
+   		<View
+       		android:layout_width="1dp"
+      		android:layout_height="45dp"
+      		android:layout_marginTop="157dp"
+       		android:background="@color/silver"
+       		android:layout_centerHorizontal="true" />
+   		<Spinner
+   		    android:id="@+id/add_member_spinner"
+   		    style="@style/add_spinner"
+   		    android:layout_alignTop="@id/add_date_txt"
+   		    android:entries="@array/member_type" />
+   		<!-- 分割线 -->
+   		<View
+   		    style="@style/line"
+      		android:layout_below="@id/add_date_txt" />
+   		
+   		<!-- 第五行 -->
+   		<Spinner 
+   		    android:id="@+id/add_project_spinner"
+   		    style="@style/add_spinner_left"
+            android:layout_below="@id/add_date_txt"
+            android:layout_marginTop="13dp"
+            android:entries="@array/project_type" />
+   		<!-- 竖分割线 -->
+   		<View
+       		android:layout_width="1dp"
+      		android:layout_height="45dp"
+      		android:layout_marginTop="202dp"
+       		android:background="@color/silver"
+       		android:layout_centerHorizontal="true" />
+   		<Spinner
+   		    android:id="@+id/add_place_spinner"
+   		    style="@style/add_spinner"
+   		    android:layout_alignTop="@id/add_project_spinner"
+   		    android:entries="@array/place_type" />
+   		<!-- 分割线 -->
+   		<View
+   		    style="@style/line"
+      		android:layout_below="@id/add_project_spinner" />
+   		
+   		<!-- 备注 -->
+   		<TextView 
+   		    android:id="@+id/add_tip_txt"
+   		    style="@style/add_txt"
+            android:layout_below="@id/add_project_spinner"
+            android:text="@string/add_tip" />
+   		<Button
+   		    android:id="@+id/add_tip_but"
+   		    android:layout_width="wrap_content"
+   		    android:layout_height="wrap_content"
+   		    android:layout_marginBottom="40dp"
+   		    android:text="@string/add_tip_but"
+   		    android:background="#ffffff"
+   		    android:textColor="#999999"
+   		    android:layout_below="@id/add_tip_txt" />
+   		
+   		<!-- 提交按钮 -->
+   		<Button 
+   		    android:id="@+id/butSave"
+   		    android:layout_width="90dp"
+   		    android:layout_height="25dp"
+   		    android:layout_marginLeft="15dp"
+   		    android:background="#f47a19"
+   		    android:text="@string/butSave"
+   		    android:textColor="#ffffff"
+   		    android:layout_below="@id/add_tip_but"
+   		    android:layout_alignParentLeft="true"/>
+   		<Button 
+   		    android:id="@+id/butAgain"
+   		    android:layout_width="90dp"
+   		    android:layout_height="25dp"
+   		    android:layout_marginRight="15dp"
+   		    android:background="#999999"
+   		    android:text="@string/but_again"
+   		    android:textColor="#ffffff"
+   		    android:layout_below="@id/add_tip_but"
+   		    android:layout_alignParentRight="true"/>
+   		
+    </RelativeLayout>
+    
+</LinearLayout>

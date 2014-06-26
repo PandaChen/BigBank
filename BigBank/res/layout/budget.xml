@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ivory"
+    android:orientation="vertical" >
+
+    <!-- Header -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffca39" >
+
+        <ImageButton
+            android:id="@+id/but_back"
+            style="@style/header_imgbut"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_back"
+            android:textStyle="bold" />
+        <!-- date -->
+
+        <TextView
+            android:id="@+id/budget_header_date_txt"
+            style="@style/header_txt"
+            android:layout_toRightOf="@id/but_back"
+            android:text="@string/budget_header_date_txt" />
+
+        <ImageButton
+            android:id="@+id/but_refresh"
+            style="@style/header_imgbut"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/icon_action_bar_refresh" />
+    </RelativeLayout>
+
+    <!-- budget_show -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#866e54" >
+
+        <TextView
+            android:id="@+id/budget_sum"
+            style="@style/details_amount_txt1"
+            android:layout_alignParentLeft="true"
+            android:text="@string/budget_sum" />
+
+        <EditText
+            android:id="@+id/budget_sum_money"
+            style="@style/details_amount_txt1"
+            android:layout_alignParentRight="true"
+            android:background="#866e54"
+            android:numeric="integer"
+            android:singleLine="true"
+            android:text="@string/Temp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/budget_sum_money"
+            android:layout_toLeftOf="@id/budget_sum_money"
+            android:src="@drawable/budget_header_edit_bg" />
+
+        <!-- 分割线 -->
+
+        <View
+            android:id="@+id/budget_sum_line1"
+            style="@style/details_amount_line"
+            android:layout_below="@id/budget_sum_money" />
+
+        <TextView
+            android:id="@+id/budget_sum_used"
+            style="@style/budget_sum_txt2"
+            android:layout_alignParentLeft="true"
+            android:text="@string/budget_sum_used" />
+        <!-- 竖分割线 -->
+
+        <View
+            android:id="@+id/budget_sum_line2"
+            android:layout_width="1dp"
+            android:layout_height="20dp"
+            android:layout_below="@id/budget_sum_line1"
+            android:layout_centerHorizontal="true"
+            android:background="#7b6144" />
+
+        <TextView
+            android:id="@+id/budget_sum_used_money"
+            style="@style/budget_sum_txt2"
+            android:layout_toLeftOf="@id/budget_sum_line2"
+            android:text="@string/Temp" />
+
+        <TextView
+            android:id="@+id/budget_sum_left"
+            style="@style/budget_sum_txt2"
+            android:layout_toRightOf="@id/budget_sum_line2"
+            android:text="@string/budget_sum_left" />
+
+        <TextView
+            android:id="@+id/budget_sum_left_money"
+            style="@style/budget_sum_txt2"
+            android:layout_alignParentRight="true"
+            android:text="@string/Temp" />
+    </RelativeLayout>
+
+    <!-- 主体内容 -->
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical" >
+
+            <!-- 衣服饰品 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_clothes"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_clothes_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_yfsp" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_clothes_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_clothes_img"
+                    android:text="@string/budget_clothes_txt" />
+
+                <TextView
+                    android:id="@+id/budget_clothes_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_clothes_txt"
+                    android:layout_toRightOf="@id/budget_clothes_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_clothes_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_clothes_txt"
+                    android:layout_toRightOf="@id/budget_clothes_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_clothes_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_clothes_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_clothes_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_clothes_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_clothes_budget"
+                    android:layout_toLeftOf="@id/budget_clothes_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_clothes_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_clothes_budget"
+                    android:layout_toLeftOf="@id/budget_clothes_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_clothes_img" />
+            </RelativeLayout>
+
+            <!-- 食品酒水 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_food"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_food_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_spjs" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_food_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_food_img"
+                    android:text="@string/budget_food_txt" />
+
+                <TextView
+                    android:id="@+id/budget_food_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_food_txt"
+                    android:layout_toRightOf="@id/budget_food_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_food_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_food_txt"
+                    android:layout_toRightOf="@id/budget_food_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_food_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_food_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_food_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_food_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_food_budget"
+                    android:layout_toLeftOf="@id/budget_food_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_food_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_food_budget"
+                    android:layout_toLeftOf="@id/budget_food_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_food_img" />
+            </RelativeLayout>
+
+            <!-- 居家物业 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_property"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_property_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_jjwy" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_property_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_property_img"
+                    android:text="@string/budget_property_txt" />
+
+                <TextView
+                    android:id="@+id/budget_property_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_property_txt"
+                    android:layout_toRightOf="@id/budget_property_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_property_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_property_txt"
+                    android:layout_toRightOf="@id/budget_property_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_property_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_property_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_property_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_property_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_property_budget"
+                    android:layout_toLeftOf="@id/budget_property_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_property_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_property_budget"
+                    android:layout_toLeftOf="@id/budget_property_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_property_img" />
+            </RelativeLayout>
+
+            <!-- 行车交通 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_traffic"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_traffic_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_xcjt" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_traffic_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_traffic_img"
+                    android:text="@string/budget_traffic_txt" />
+
+                <TextView
+                    android:id="@+id/budget_traffic_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_traffic_txt"
+                    android:layout_toRightOf="@id/budget_traffic_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_traffic_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_traffic_txt"
+                    android:layout_toRightOf="@id/budget_traffic_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_traffic_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_traffic_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_traffic_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_traffic_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_traffic_budget"
+                    android:layout_toLeftOf="@id/budget_traffic_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_traffic_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_traffic_budget"
+                    android:layout_toLeftOf="@id/budget_traffic_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_traffic_img" />
+            </RelativeLayout>
+
+            <!-- 交流通讯 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_communication"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_communication_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_jltx" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_communication_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_communication_img"
+                    android:text="@string/budget_communication_txt" />
+
+                <TextView
+                    android:id="@+id/budget_communication_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_communication_txt"
+                    android:layout_toRightOf="@id/budget_communication_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_communication_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_communication_txt"
+                    android:layout_toRightOf="@id/budget_communication_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_communication_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_communication_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_communication_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_communication_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_communication_budget"
+                    android:layout_toLeftOf="@id/budget_communication_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_communication_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_communication_budget"
+                    android:layout_toLeftOf="@id/budget_communication_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_communication_img" />
+            </RelativeLayout>
+
+            <!-- 休闲娱乐 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_entertainment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_entertainment_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_xxyl" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_entertainment_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_entertainment_img"
+                    android:text="@string/budget_entertainment_txt" />
+
+                <TextView
+                    android:id="@+id/budget_entertainment_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_entertainment_txt"
+                    android:layout_toRightOf="@id/budget_entertainment_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_entertainment_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_entertainment_txt"
+                    android:layout_toRightOf="@id/budget_entertainment_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_entertainment_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_entertainment_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_entertainment_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_entertainment_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_entertainment_budget"
+                    android:layout_toLeftOf="@id/budget_entertainment_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_entertainment_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_entertainment_budget"
+                    android:layout_toLeftOf="@id/budget_entertainment_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_entertainment_img" />
+            </RelativeLayout>
+
+            <!-- 学习进修 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_study"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_study_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_xxjx" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_study_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_study_img"
+                    android:text="@string/budget_study_txt" />
+
+                <TextView
+                    android:id="@+id/budget_study_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_study_txt"
+                    android:layout_toRightOf="@id/budget_study_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_study_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_study_txt"
+                    android:layout_toRightOf="@id/budget_study_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_study_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_study_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_study_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_study_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_study_budget"
+                    android:layout_toLeftOf="@id/budget_study_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_study_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_study_budget"
+                    android:layout_toLeftOf="@id/budget_study_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_study_img" />
+            </RelativeLayout>
+
+            <!-- 人情来往 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_kindness"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_kindness_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_rqwl" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_kindness_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_kindness_img"
+                    android:text="@string/budget_kindness_txt" />
+
+                <TextView
+                    android:id="@+id/budget_kindness_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_kindness_txt"
+                    android:layout_toRightOf="@id/budget_kindness_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_kindness_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_kindness_txt"
+                    android:layout_toRightOf="@id/budget_kindness_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_kindness_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_kindness_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_kindness_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_kindness_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_kindness_budget"
+                    android:layout_toLeftOf="@id/budget_kindness_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_kindness_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_kindness_budget"
+                    android:layout_toLeftOf="@id/budget_kindness_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_kindness_img" />
+            </RelativeLayout>
+
+            <!-- 医疗保险 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_medicine"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_medicine_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_ylbj" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_medicine_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_medicine_img"
+                    android:text="@string/budget_medicine_txt" />
+
+                <TextView
+                    android:id="@+id/budget_medicine_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_medicine_txt"
+                    android:layout_toRightOf="@id/budget_medicine_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_medicine_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_medicine_txt"
+                    android:layout_toRightOf="@id/budget_medicine_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_medicine_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_medicine_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_medicine_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_medicine_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_medicine_budget"
+                    android:layout_toLeftOf="@id/budget_medicine_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_medicine_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_medicine_budget"
+                    android:layout_toLeftOf="@id/budget_medicine_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_medicine_img" />
+            </RelativeLayout>
+
+            <!-- 金融保险 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_finance"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_finance_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_jrbx" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_finance_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_finance_img"
+                    android:text="@string/budget_finance_txt" />
+
+                <TextView
+                    android:id="@+id/budget_finance_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_finance_txt"
+                    android:layout_toRightOf="@id/budget_finance_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_finance_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_finance_txt"
+                    android:layout_toRightOf="@id/budget_finance_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_finance_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_finance_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_finance_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_finance_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_finance_budget"
+                    android:layout_toLeftOf="@id/budget_finance_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_finance_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_finance_budget"
+                    android:layout_toLeftOf="@id/budget_finance_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_finance_img" />
+            </RelativeLayout>
+
+            <!-- 其他杂项 -->
+
+            <RelativeLayout
+                android:id="@+id/budget_others"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- Date -->
+
+                <ImageView
+                    android:id="@+id/budget_others_img"
+                    style="@style/main_details_img"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/icon_qtzx" />
+                <!-- Text_Left -->
+
+                <TextView
+                    android:id="@+id/budget_others_txt"
+                    style="@style/details_secondary"
+                    android:layout_toRightOf="@id/budget_others_img"
+                    android:text="@string/budget_others_txt" />
+
+                <TextView
+                    android:id="@+id/budget_others_budget"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_others_txt"
+                    android:layout_toRightOf="@id/budget_others_img"
+                    android:text="@string/budget_budget" />
+
+                <TextView
+                    android:id="@+id/budget_others_budget_money"
+                    style="@style/details_primary"
+                    android:layout_below="@id/budget_others_txt"
+                    android:layout_toRightOf="@id/budget_others_budget"
+                    android:text="@string/Temp" />
+                <!-- Text_Right -->
+
+                <TextView
+                    android:id="@+id/budget_others_go"
+                    style="@style/details_go" />
+
+                <ImageView
+                    android:id="@+id/budget_others_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toLeftOf="@id/budget_others_go"
+                    android:src="@drawable/local_acc_book_overlay" />
+
+                <TextView
+                    android:id="@+id/budget_others_balance_money"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_others_budget"
+                    android:layout_toLeftOf="@id/budget_others_go"
+                    android:text="@string/Temp" />
+
+                <TextView
+                    android:id="@+id/budget_others_balance"
+                    style="@style/details_primary"
+                    android:layout_alignTop="@id/budget_others_budget"
+                    android:layout_toLeftOf="@id/budget_others_balance_money"
+                    android:text="@string/budget_balance" />
+
+                <!-- 分割线 -->
+
+                <View
+                    style="@style/line"
+                    android:layout_below="@id/budget_others_img" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

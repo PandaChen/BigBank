@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ivory"
+    android:orientation="vertical" >
+    
+    <!-- Header -->
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffca39" >
+        <ImageButton 
+            android:id="@+id/but_back"
+            style="@style/header_imgbut"
+            android:textStyle="bold"
+            android:src="@drawable/icon_back"
+            android:layout_alignParentLeft="true"/>
+        <!-- date -->
+        <TextView
+            android:id="@+id/details_header_date_txt"
+            style="@style/header_txt"
+            android:layout_toRightOf="@id/but_back"
+            android:text="@string/Temp" />
+        <ImageButton 
+            android:id="@+id/but_add"
+            style="@style/header_imgbut"
+            android:src="@drawable/icon_action_bar_add"
+            android:layout_alignParentRight="true" /> 
+        <ImageButton 
+            android:id="@+id/details_header_time_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#ffca39"
+            android:src="@drawable/icon_action_bar_time"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="38dp"
+            android:layout_toLeftOf="@id/but_add" />
+    </RelativeLayout>
+    
+    <!-- details_amount_show -->
+   <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#866e54" >
+        <TextView
+            android:id="@+id/details_amount_sum"
+            style="@style/details_amount_txt1"
+            android:text="@string/details_amount_sum"
+            android:layout_alignParentLeft="true" />
+        <TextView
+            android:id="@+id/details_amount_money"
+            style="@style/details_amount_txt1"
+            android:text="@string/zero"
+            android:layout_alignParentRight="true" />
+        
+        <!-- 分割线 -->
+        <View
+            android:id="@+id/details_amount_line1"
+   		    style="@style/details_amount_line"
+      		android:layout_below="@id/details_amount_sum" />
+     
+        <TextView
+            android:id="@+id/details_amount_income"
+            style="@style/details_amount_txt2"
+            android:text="@string/details_amount_income"
+            android:layout_alignParentLeft="true" />
+        <!-- 竖分割线 -->
+   		<View
+   		    android:id="@+id/details_amount_line2"
+       		android:layout_width="1dp"
+      		android:layout_height="20dp"
+      		android:layout_below="@id/details_amount_line1"
+       		android:background="#7b6144"
+       		android:layout_centerHorizontal="true" />
+   		<TextView
+            android:id="@+id/details_amount_income_money"
+            style="@style/details_amount_txt2"
+            android:text="@string/zero"
+            android:layout_toLeftOf="@id/details_amount_line2" />
+   		
+   		<TextView
+            android:id="@+id/details_amount_pay"
+            style="@style/details_amount_txt2"
+            android:text="@string/details_amount_pay"
+            android:layout_toRightOf="@id/details_amount_line2" />
+   		<TextView
+            android:id="@+id/details_amount_pay_money"
+            style="@style/details_amount_txt2"
+            android:text="@string/zero"
+            android:layout_alignParentRight="true" />        
+    </RelativeLayout>
+    
+   <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp" >
+    <ImageView 
+        android:id="@+id/details_null_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/common_lv_empty_tips"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:id="@+id/details_null_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/details_nothing"
+        android:textSize="18sp"
+        android:textColor="#cccccc"
+        android:layout_below="@id/details_null_img"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/details_writing"
+        android:textSize="12sp"
+        android:textColor="#cccccc"
+        android:layout_below="@id/details_null_txt"
+        android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+
+</LinearLayout>

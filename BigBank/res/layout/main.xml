@@ -1,0 +1,287 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/main_activity_bg"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <!-- main_top -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/main_top_month_report_bg"
+        android:orientation="vertical" >
+
+        <!-- 第一行 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- 月份 -->
+            <TextView
+                android:id="@+id/main_top_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="10dp"
+                android:text="6"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+            <!-- 年份 -->
+            <TextView
+                android:id="@+id/main_top_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="/2014"
+                android:textColor="@color/darkgoldenrod"
+                android:textSize="12sp" />
+        </LinearLayout>
+        
+        <!-- 第二部分文本框汇总 -->
+        <TableLayout
+            android:id="@+id/main_top_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp" >
+            <TableRow
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content" >
+        		<!-- 收入总额 -->
+        		<TextView
+                	android:id="@+id/income_amount"
+                	style="@style/main_top_left"
+                	android:text="@string/income_amount" />
+        		<TextView
+                	android:id="@+id/income_amount_num"
+                	style="@style/main_top_right"
+                	android:text="@string/Temp" />
+        	</TableRow>
+        	
+            <!-- 分割线 -->
+    		<View
+    		    android:layout_margin="10dp"
+        		android:layout_height="1dp"
+        		android:background="#FFA52F" />
+
+    		<TableRow
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content" >
+        		<!-- 支出总额 -->
+        		<TextView
+                	android:id="@+id/pay_amount"
+                	style="@style/main_top_left"
+                	android:text="@string/pay_amount" />
+        		<TextView
+                	android:id="@+id/pay_amount_num"
+                	style="@style/main_top_right"
+                	android:text="@string/Temp" />
+            </TableRow>
+            <!-- 分割线 -->
+    		<View
+    		    android:layout_margin="10dp"
+        		android:layout_height="1dp"
+        		android:background="#FFA52F" />
+
+    		<TableRow
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content" >
+        		<!-- 预算余额 -->
+        		<TextView
+                	android:id="@+id/budget_amount"
+                	style="@style/main_top_left"
+                	android:text="@string/budget_amount" />
+        		<TextView
+                	android:id="@+id/budget_amount_num"
+                	style="@style/main_top_right"
+                	android:text="@string/Temp" />
+            </TableRow>
+        </TableLayout>
+        
+    </LinearLayout>
+    
+    <!-- add it! -->
+    <Button 
+        android:id="@+id/add_new"
+        style="@style/main_add_new_button"
+        android:text="@string/add_new" />
+        
+    <!-- details -->
+    <LinearLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="vertical"
+        android:background="@color/ivory" >
+        
+        <!-- 分割线 -->
+   		<View
+       		android:layout_width="fill_parent"
+      		android:layout_height="1dp"
+       		android:background="@color/silver"
+       		android:layout_marginBottom="3dp" />
+   		<!-- details_day -->
+   		<RelativeLayout 
+   		    android:id="@+id/main_today_layout"
+   		    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_margin="10dp">
+   		    <TextView
+   		    	android:id="@+id/main_today_img"
+   		    	android:gravity="center"
+        		style="@style/main_details_img"
+        		android:background="@drawable/main_today" />
+   		    <!-- today -->
+   			<TextView
+   		   		android:id="@+id/main_today_txt"
+   		   		style="@style/main_details_txt"
+        		android:layout_toRightOf="@id/main_today_img"
+        		android:text="@string/today" />
+   			<!-- 日期 -->
+   			<TextView
+   		   		android:id="@+id/main_today_date"
+   		   		style="@style/main_details_date"
+        		android:layout_below="@id/main_today_txt"
+        		android:layout_toRightOf="@id/main_today_img"
+        		android:text="@string/Temp" />
+   			<!-- 支出 -->
+   			<TextView
+   			    android:id="@+id/main_today_pay"
+   			    style="@style/main_details_pay"
+   			    android:layout_toRightOf="@id/main_today_txt"
+   			    android:text="@string/Temp" />
+   			<!-- 收入 -->
+   			<TextView
+   			    android:id="@+id/main_today_income"
+   			    style="@style/main_details_income"
+   			    android:layout_below="@id/main_today_pay"
+   			    android:layout_alignLeft="@id/main_today_pay"
+   			    android:text="@string/Temp" />
+   		</RelativeLayout>
+   		
+   		<!-- 分割线 -->
+   		<View
+       		android:layout_width="fill_parent"
+      		android:layout_height="1dp"
+      		android:layout_marginTop="5dp"
+      		android:layout_marginBottom="3dp"
+       		android:background="@color/silver" />
+   		<!-- details_week -->
+  		<RelativeLayout 
+  		    android:id="@+id/main_week_layout"
+   		    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_margin="10dp">
+   		    <ImageView 
+   		    	android:id="@+id/main_week_img"
+        		style="@style/main_details_img"
+        		android:src="@drawable/main_week" />
+   		    <!-- week -->
+   			<TextView
+   		   		android:id="@+id/main_week_txt"
+   		   		style="@style/main_details_txt"
+        		android:layout_toRightOf="@id/main_week_img"
+        		android:text="@string/week" />
+   			<!-- 日期 -->
+   			<TextView
+   		   		android:id="@+id/main_week_date"
+   		   		style="@style/main_details_date"
+        		android:layout_below="@id/main_week_txt"
+        		android:layout_toRightOf="@id/main_week_img"
+        		android:text="@string/Temp" />
+   			<!-- 支出 -->
+   			<TextView
+   			    android:id="@+id/main_week_pay"
+   			    style="@style/main_details_pay"
+   			    android:layout_toRightOf="@id/main_week_txt"
+   			    android:text="@string/Temp" />
+   			<!-- 收入 -->
+   			<TextView
+   			    android:id="@+id/main_week_income"
+   			    style="@style/main_details_income"
+   			    android:layout_below="@id/main_week_pay"
+   			    android:layout_alignLeft="@id/main_week_pay"
+   			    android:text="@string/Temp" />
+   		</RelativeLayout>
+   		
+  		<!-- 分割线 -->
+   		<View
+       		android:layout_width="fill_parent"
+      		android:layout_height="1dp"
+      		android:layout_marginTop="5dp"
+      		android:layout_marginBottom="3dp"
+       		android:background="@color/silver" />
+   		<!-- details_month -->
+  		<RelativeLayout 
+  		    android:id="@+id/main_month_layout"
+   		    android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_margin="10dp">
+   		    <ImageView 
+   		    	android:id="@+id/main_month_img"
+        		style="@style/main_details_img"
+        		android:src="@drawable/main_month" />
+   		    <!-- month -->
+   			<TextView
+   		   		android:id="@+id/main_month_txt"
+   		   		style="@style/main_details_txt"
+        		android:layout_toRightOf="@id/main_month_img"
+        		android:text="@string/month" />
+   			<!-- 日期 -->
+   			<TextView
+   		   		android:id="@+id/main_month_date"
+   		   		style="@style/main_details_date"
+        		android:layout_below="@id/main_month_txt"
+        		android:layout_toRightOf="@id/main_month_img"
+        		android:text="@string/Temp" />
+   			<!-- 支出 -->
+   			<TextView
+   			    android:id="@+id/main_month_pay"
+   			    style="@style/main_details_pay"
+   			    android:layout_toRightOf="@id/main_month_txt"
+   			    android:text="@string/Temp" />
+   			<!-- 收入 -->
+   			<TextView
+   			    android:id="@+id/main_month_income"
+   			    style="@style/main_details_income"
+   			    android:layout_below="@id/main_month_pay"
+   			    android:layout_alignLeft="@id/main_month_pay"
+   			    android:text="@string/Temp" />
+   		</RelativeLayout>
+  
+    </LinearLayout>
+    
+    <!-- 功能按钮选择 -->
+    <TableLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#2B2B2B">
+        <TableRow 
+            android:id="@+id/main_but_choose">
+            <Button
+                android:id="@+id/nav_details_year"
+                android:layout_marginLeft="35dp"
+                android:background="@drawable/nav_details_year" />
+            <Button
+                android:id="@+id/nav_account"
+                android:layout_marginLeft="35dp"
+                android:background="@drawable/nav_account" />
+            <Button
+                android:id="@+id/nav_chart"
+                android:layout_marginLeft="35dp"
+                android:background="@drawable/nav_report" />
+            <Button
+                android:id="@+id/nav_budget"
+                android:layout_marginLeft="35dp"
+                android:background="@drawable/nav_budget" />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

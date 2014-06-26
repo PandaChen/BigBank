@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<!-- 主体内容 -->
+    <RelativeLayout
+        android:id="@+id/details_part_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+   		<!-- Date -->
+   		<ImageView 
+ 		    android:id="@+id/main_today_img_1"
+      		style="@style/main_details_img"
+      		android:src="@drawable/main_today"
+      		android:layout_alignParentLeft="true" />
+   		<!-- Text_Left -->
+   		<TextView
+   		    android:id="@+id/details_secondary_1"
+   		    style="@style/details_secondary"
+   		    android:text="@string/Temp"
+   		    android:layout_toRightOf="@id/main_today_img_1" />
+   		<TextView
+   		    android:id="@+id/details_primary_1"
+   		    style="@style/details_primary"
+   		    android:text="@string/Temp"
+   		    android:layout_toRightOf="@id/main_today_img_1"
+   		    android:layout_below="@id/details_secondary_1" />
+   		<!-- Text_Right -->
+   		<TextView
+   		    android:id="@+id/details_go_1"
+   		    style="@style/details_go" />
+   		<TextView
+   		    android:id="@+id/details_money_sum_1"
+   		    style="@style/details_money_sum"
+   		    android:text="@string/Temp"
+   		    android:layout_toLeftOf="@id/details_go_1" />   		   		
+   		<!-- 分割线 -->
+   		<View
+   		    style="@style/line"
+      		android:layout_below="@id/main_today_img_1" />   		
+   	 </RelativeLayout>
+</LinearLayout>

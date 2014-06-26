@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BigBank</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="Temp">wart</string>
+    <string name="zero">0.00</string>
+    
+    <!-- main.xml -->
+    <string name="income_amount">收入总额：</string>
+    <string name="pay_amount">支出总额：</string>
+    <string name="budget_amount">预算余额：</string>
+    <string name="add_new">记 一 笔 ！</string>
+    <string name="today">今天</string>
+    <string name="week">本周</string>
+    <string name="month">本月</string>
+    
+    <!-- add.xml -->
+    <string name="but_back">〈</string>
+    <string name="but_save">√ 保存</string>
+    <string name="add_type">类型</string>
+    <string name="add_account">账户</string>
+    <string name="add_tip">备注:</string>
+    <string name="add_tip_but">请填写备注信息</string>
+    <string name="butSave">保存</string>
+    <string name="but_again">再记一笔</string>
+    
+    <!-- tips.xml -->
+    <string name="but_back_tips">〈备注笔记</string>
+    <string name="tips_edit">轻触输入备注：</string>
+    
+    <!-- add_transfer.xml -->
+    <string name="add_transfer_txt">〉</string>
+    
+    <!-- details.xml -->
+    <string name="details_amount_sum">结余：</string>
+    <string name="details_amount_income">收入：</string>
+    <string name="details_amount_pay">支出：</string>
+    <string name="details_nothing">没有记录</string>
+    <string name="details_writing">您可以进入“记账界面”填写</string>
+    <string name="details_go">＞</string>
+    
+    <!-- budget.xml -->
+    <string name="budget_header_date_txt">预算</string>
+    <string name="budget_sum">总预算：</string>
+    <string name="budget_sum_used">已用：</string>
+    <string name="budget_sum_left">可用：</string>
+    <string name="budget_budget">预算：</string>
+    <string name="budget_balance">余额：</string>
+    <string name="budget_clothes_txt">衣服饰品</string>
+    <string name="budget_food_txt">食品酒水</string>
+    <string name="budget_property_txt">居家物业</string>
+    <string name="budget_traffic_txt">行车交通</string>
+    <string name="budget_communication_txt">交流通讯</string>
+    <string name="budget_entertainment_txt">休闲娱乐</string>
+    <string name="budget_study_txt">学习进修</string>
+    <string name="budget_kindness_txt">人情来往</string>
+    <string name="budget_medicine_txt">医疗保险</string>
+    <string name="budget_finance_txt">金融保险</string>
+    <string name="budget_others_txt">其他杂项</string>
+
+</resources>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="add_type">
+        <item>新增支出</item>
+        <item>新增收入</item>
+        <item>新增转账</item>
+        <item>新增退款</item>
+    </string-array>
+    
+    <string-array name="pay_type">
+        <item>衣服饰品</item>
+        <item>视频酒水</item>
+        <item>居家物业</item>
+        <item>行车交通</item>
+        <item>交流通讯</item>
+        <item>休闲娱乐</item>
+        <item>学习进修</item>
+        <item>人情来往</item>
+        <item>医疗保险</item>
+        <item>金融保险</item>
+        <item>其他杂项</item>
+    </string-array>
+    
+    <string-array name="income_type">
+        <item>工资收入</item>
+        <item>利息收入</item>
+        <item>加班收入</item>
+        <item>奖金收入</item>
+        <item>投资收入</item>
+        <item>兼职收入</item>
+        <item>礼金收入</item>
+        <item>中奖收入</item>
+        <item>意外来钱</item>
+        <item>经营所得</item>
+    </string-array>
+    
+    <string-array name="account_type">
+        <item>现金</item>
+        <item>信用卡</item>
+        <item>银行卡</item>
+        <item>公交卡</item>
+        <item>饭卡</item>
+        <item>支付宝</item>
+    </string-array>
+    
+    <string-array name="member_type">
+        <item>无成员</item>
+        <item>本人</item>
+        <item>伴侣</item>
+        <item>子女</item>
+        <item>父母</item>
+        <item>家庭公用</item>
+    </string-array>
+    
+    <string-array name="project_type">
+        <item>无项目</item>
+        <item>红包</item>
+        <item>过年买票</item>
+        <item>回家过年</item>
+        <item>出差</item>
+        <item>装修</item>
+        <item>旅游</item>
+        <item>腐败</item>
+        <item>其它</item>
+    </string-array>
+
+    <string-array name="place_type">
+        <item>无商家/地点</item>
+        <item>其它</item>
+        <item>饭堂</item>
+        <item>银行</item>
+        <item>商场</item>
+        <item>超市</item>
+        <item>公交</item>
+    </string-array>
+</resources>
