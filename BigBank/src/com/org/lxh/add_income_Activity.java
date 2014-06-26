@@ -25,6 +25,7 @@ public class add_income_Activity extends Activity {
 	Spinner add_type_spinner; // 具体类型
 	Spinner add_account_spinner; // 账户类型
 	TextView add_date_txt; // 日期
+	//1234
 	Spinner add_member_spinner; // 成员
 	Spinner add_project_spinner; // 项目
 	Spinner add_place_spinner; // 商家、地点
