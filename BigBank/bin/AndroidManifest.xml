@@ -29,6 +29,7 @@
         <activity android:name=".add_income_Activity"></activity>
         <activity android:name=".add_refund_Activity"></activity>
         <activity android:name=".detail_list_Activity"></activity>
+        <activity android:name=".budget_Activity"></activity>
         
     </application>
 

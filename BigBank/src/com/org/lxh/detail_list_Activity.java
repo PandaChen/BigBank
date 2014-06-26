@@ -1,6 +1,7 @@
 package com.org.lxh;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
 
@@ -8,18 +9,29 @@ import com.org.util.BigBankDBOpenHelper;
 import com.org.util.MyAdapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
-public class detail_list_Activity extends Activity{
+public class detail_list_Activity extends Activity implements OnClickListener{
 	private BigBankDBOpenHelper uioh;
 	private SQLiteDatabase db;
 	private Cursor cursor;
+	private ImageButton but_back;	//返回
+	private TextView details_header_date_txt;	//年份
+	@SuppressWarnings("unused")
+	private ImageButton details_header_time_icon;	//时间
+	private ImageButton but_add;	//新增
 	private ListView detail_list;
 	private MyAdapter adapter;
 	private ArrayList<HashMap<String, Object>> items;
+	private Calendar calendar;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +39,24 @@ public class detail_list_Activity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.detail_list);
 		
+		calendar = Calendar.getInstance();
+		
+		//返回
+		but_back = (ImageButton)this.findViewById(R.id.but_back);
+		but_back.setOnClickListener(this);
+		
+		//年份
+		details_header_date_txt = (TextView)this.findViewById(R.id.details_header_date_txt);
+		System.out.println(calendar.get(Calendar.YEAR));
+		details_header_date_txt.setText(""+calendar.get(Calendar.YEAR));
+		//时间
+		details_header_time_icon = (ImageButton)this.findViewById(R.id.details_header_time_icon);
+		
+		//新增
+		but_add = (ImageButton)this.findViewById(R.id.but_add);
+		but_add.setOnClickListener(this);
+		
+		//账单
 		detail_list = (ListView)this.findViewById(R.id.detail_list);
 		
 		uioh = new BigBankDBOpenHelper(this);
@@ -51,4 +81,18 @@ public class detail_list_Activity extends Activity{
 		detail_list.setAdapter(adapter);
 	}
 
+	@Override
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		switch (arg0.getId()) {
+		case R.id.but_back:
+			Intent but_back = new Intent(this, MainActivity.class);
+			this.startActivity(but_back);
+			break;
+		case R.id.but_add:
+			Intent but_add = new Intent(this, add_pay_Activity.class);
+			this.startActivity(but_add);
+			break;
+		}
+	}
 }

@@ -13,6 +13,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener{
 
 	private Button nav_details_year;	//账单
+	private TextView budget_amount;		//预算 
 	private Button add_new;
 	private TextView main_month;
 	private TextView main_year;
@@ -44,6 +45,10 @@ public class MainActivity extends Activity implements OnClickListener{
 		main_week.setText(BigBankDate.getSundayOfThisWeek()+"-"+BigBankDate.getSaturdayOfThisWeek());
         main_month_date.setText(BigBankDate.getFistDayOfMonth()+"-"+BigBankDate.getLastDayOfMonth());
 		
+        //预算
+        budget_amount = (TextView)this.findViewById(R.id.budget_amount);
+        budget_amount.setOnClickListener(this);
+        
 		//再记一笔
 		add_new = (Button) this.findViewById(R.id.add_new);
 		add_new.setOnClickListener(this);
@@ -58,6 +63,11 @@ public class MainActivity extends Activity implements OnClickListener{
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 		switch(arg0.getId()){
+		//预算
+		case R.id.budget_amount:
+			Intent budget_amount = new Intent(this,budget_Activity.class);
+			this.startActivity(budget_amount);
+			break;
 		//再记一笔
 		case R.id.add_new:
 			Intent add_new = new Intent(this,add_pay_Activity.class);
