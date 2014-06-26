@@ -92,6 +92,10 @@ public class add_pay_Activity extends Activity implements OnClickListener {
 		but_save = (Button) this.findViewById(R.id.but_save);
 		but_save.setOnClickListener(this);
 
+		// 点击时间
+		add_date_txt = (TextView) this.findViewById(R.id.add_date_txt);
+		add_date_txt.setOnClickListener(this);
+		
 		// 点击备注
 		add_tip_but = (Button) this.findViewById(R.id.add_tip_but);
 		add_tip_but.setOnClickListener(this);
@@ -178,6 +182,10 @@ public class add_pay_Activity extends Activity implements OnClickListener {
 			// 保存成功后返回主界面
 			Intent but_save = new Intent(this, MainActivity.class);
 			this.startActivity(but_save);
+			break;
+		//点击时间
+		case R.id.add_date_txt:
+			new BigBankDate().choiceDate_Time(arg0.getContext(),(TextView)arg0);
 			break;
 		// 点击备注
 		case R.id.add_tip_but:
