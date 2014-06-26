@@ -7,14 +7,16 @@ import com.org.common.BigBankDate;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener{
-
-	private Button nav_details_year;	//账单
+	
+	private Button nav_details_year;	
 	private Button add_new;
 	private TextView main_month;
 	private TextView main_year;
