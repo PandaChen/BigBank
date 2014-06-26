@@ -14,12 +14,12 @@ import android.os.Bundle;
 import android.widget.ListView;
 
 public class detail_list_Activity extends Activity{
-	BigBankDBOpenHelper uioh;
-	SQLiteDatabase db;
-	Cursor cursor;
-	ListView detail_list;
-	MyAdapter adapter;
-	ArrayList<HashMap<String, Object>> items;
+	private BigBankDBOpenHelper uioh;
+	private SQLiteDatabase db;
+	private Cursor cursor;
+	private ListView detail_list;
+	private MyAdapter adapter;
+	private ArrayList<HashMap<String, Object>> items;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
