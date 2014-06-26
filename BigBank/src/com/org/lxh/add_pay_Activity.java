@@ -33,6 +33,7 @@ public class add_pay_Activity extends Activity implements OnClickListener {
 	private Button butSave; // 保存
 	private Button butAgain; // 再记一笔
 
+	@SuppressWarnings("static-access")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -94,6 +95,7 @@ public class add_pay_Activity extends Activity implements OnClickListener {
 
 		// 点击时间
 		add_date_txt = (TextView) this.findViewById(R.id.add_date_txt);
+		add_date_txt.setText(new BigBankDate().setBillDefaultDate());
 		add_date_txt.setOnClickListener(this);
 		
 		// 点击备注
@@ -183,7 +185,7 @@ public class add_pay_Activity extends Activity implements OnClickListener {
 			Intent but_save = new Intent(this, MainActivity.class);
 			this.startActivity(but_save);
 			break;
-		//点击时间
+		// 点击时间
 		case R.id.add_date_txt:
 			new BigBankDate().choiceDate_Time(arg0.getContext(),(TextView)arg0);
 			break;
